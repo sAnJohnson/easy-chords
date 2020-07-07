@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using EasyChords.Models;
 using EasyChords.ViewModels;
@@ -26,6 +27,14 @@ namespace EasyChords.Controllers
 
             chordsListViewModel.CurrentMusicalKey = "C Major";
             return View(chordsListViewModel);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var chord = _chordRepository.GetChordById(id);
+            if (chord == null)
+                return NotFound();
+            return View(chord);
         }
     }
 }

@@ -65,3 +65,4 @@ C:\Users\Steven\source\repos\EasyChords\EasyChords\bin\Debug\netcoreapp3.1\runti
 C:\Users\Steven\source\repos\EasyChords\EasyChords\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Steven\source\repos\EasyChords\EasyChords\obj\Debug\netcoreapp3.1\EasyChords.csproj.CoreCompileInputs.cache
 C:\Users\Steven\source\repos\EasyChords\EasyChords\obj\Debug\netcoreapp3.1\EasyChords.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Steven\source\repos\EasyChords\EasyChords\obj\Debug\netcoreapp3.1\Razor\Views\Chord\Details.cshtml.g.cs

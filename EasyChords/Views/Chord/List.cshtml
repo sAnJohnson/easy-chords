@@ -6,7 +6,7 @@
     {
         <div>
             <h2>
-                @chord.ChordName
+                <a asp-controller="Chord" asp-action="Details" asp-route-id="@chord.ChordId">@chord.ChordName</a>
             </h2>
         </div>
     }
