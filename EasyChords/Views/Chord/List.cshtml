@@ -1,0 +1,13 @@
+﻿@model ChordsListViewModel
+
+
+    <h1>@Model.CurrentMusicalKey</h1>
+    @foreach (var chord in Model.Chords)
+    {
+        <div>
+            <h2>
+                @chord.ChordName @chord.IsMajor
+            </h2>
+            <h3>@chord.ImageUrl</h3>
+        </div>
+    }
