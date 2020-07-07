@@ -11,8 +11,6 @@ namespace EasyChords.Models
         public string MusicalKeyName { get; set; }
         public bool IsMajor { get; set; }
         public bool IsNatural { get; set; }
-        public bool IsSharp { get; set; }
-        public bool IsFlat { get; set; }
         public List<Chord> Chords { get; set; }
 
     }
