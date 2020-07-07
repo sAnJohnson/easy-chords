@@ -16,23 +16,34 @@ namespace EasyChords.Models
         public DbSet<Chord> Chords { get; set; }
         public DbSet<MusicalKey> MusicalKeys { get; set; }
 
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             //seed Musical Keys
             modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "C Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
-            modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "C#/Db Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
-            modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "D Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
-            modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "D#/Eb Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
-            modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "E Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
-            modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "F Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
-            modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "F#/Gb Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
-            modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "G Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
-            modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "G#/Ab Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
-            modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "A Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
-            modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "A#/Bb Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
-            modelBuilder.Entity<MusicalKey>().HasData(new MusicalKey { MusicalKeyId = 1, MusicalKeyName = "B Major", IsNatural = true, IsFlat = false, IsSharp = false, IsMajor = true });
+
+            //seed Chords
+            modelBuilder.Entity<Chord>().HasData(new Chord
+            {
+                ChordId = 1,
+                ChordName = "C Major",
+                IsMajor = true,
+                IsNatural = true,
+                ImageUrl = "https://cdn.instructables.com/F01/5VA7/IQPFDKBU/F015VA7IQPFDKBU.LARGE.jpg?auto=webp&frame=1&fit=bounds",
+                MusicalKeyId = 1
+            });
+
+            modelBuilder.Entity<Chord>().HasData(new Chord
+            {
+                ChordId = 2,
+                ChordName = "D Minor",
+                IsMajor = false,
+                IsNatural = true,
+                ImageUrl = "https://www.pianochord.org/images/dm.png",
+                MusicalKeyId = 1
+            });
 
         }
     }

@@ -3,14 +3,16 @@ using EasyChords.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EasyChords.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200707140350_Seed Data")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,10 +33,19 @@ namespace EasyChords.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsFlat")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsMajor")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsMinor")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsNatural")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsSharp")
                         .HasColumnType("bit");
 
                     b.Property<int>("MusicalKeyId")
@@ -45,26 +56,6 @@ namespace EasyChords.Migrations
                     b.HasIndex("MusicalKeyId");
 
                     b.ToTable("Chords");
-
-                    b.HasData(
-                        new
-                        {
-                            ChordId = 1,
-                            ChordName = "C Major",
-                            ImageUrl = "https://cdn.instructables.com/F01/5VA7/IQPFDKBU/F015VA7IQPFDKBU.LARGE.jpg?auto=webp&frame=1&fit=bounds",
-                            IsMajor = true,
-                            IsNatural = true,
-                            MusicalKeyId = 1
-                        },
-                        new
-                        {
-                            ChordId = 2,
-                            ChordName = "D Minor",
-                            ImageUrl = "https://www.pianochord.org/images/dm.png",
-                            IsMajor = false,
-                            IsNatural = true,
-                            MusicalKeyId = 1
-                        });
                 });
 
             modelBuilder.Entity("EasyChords.Models.MusicalKey", b =>

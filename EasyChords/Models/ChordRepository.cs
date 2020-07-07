@@ -34,7 +34,7 @@ namespace EasyChords.Models
         {
             get
             {
-                return _appDbContext.Chords.Include(m => m.MusicalKey).Where(c => c.IsMinor);
+                return _appDbContext.Chords.Include(m => m.MusicalKey).Where(c => c.IsMajor == false);
             }
         }
 
