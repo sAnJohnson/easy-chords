@@ -4,9 +4,5 @@
     <h1>@Model.CurrentMusicalKey</h1>
     @foreach (var chord in Model.Chords)
     {
-        <div>
-            <h2>
-                <a asp-controller="Chord" asp-action="Details" asp-route-id="@chord.ChordId">@chord.ChordName</a>
-            </h2>
-        </div>
+        <partial name="_ChordCard" model="chord" />
     }
