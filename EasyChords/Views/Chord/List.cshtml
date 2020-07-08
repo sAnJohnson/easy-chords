@@ -2,7 +2,12 @@
 
 
     <h1>@Model.CurrentMusicalKey</h1>
-    @foreach (var chord in Model.Chords)
-    {
-        <partial name="_ChordCard" model="chord" />
-    }
+    <div class="row">
+        <div class="col">
+            @foreach (var chord in Model.Chords)
+            {
+                <partial name="_ChordCard" model="chord" />
+            }
+        </div>
+    </div>
+    

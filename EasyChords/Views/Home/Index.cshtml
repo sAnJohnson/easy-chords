@@ -1,17 +1,19 @@
 ﻿@model HomeViewModel
 
-<h1>Yo yo yo</h1>
-<div>
-    <h3>Major Chords</h3>
-    @foreach (var chord in Model.MajorChords)
-    {
-        <partial name="_ChordCard" model="chord"/>
-    }
+<h1 class="display-1">Easy Chords</h1>
+<div class="row">
+    <div class="col">
+        <h3>Major Chords</h3>
+        @foreach (var chord in Model.MajorChords)
+        {
+            <partial name="_ChordCard" model="chord"/>
+        }
+    </div>
+    <div class="col">
+        <h3>Minor Chords</h3>
+        @foreach (var chord in Model.MinorChords)
+        {
+            <partial name="_ChordCard" model="chord" />
+        }
 </div>
-<div>
-    <h3>Minor Chords</h3>
-    @foreach (var chord in Model.MinorChords)
-    {
-        <partial name="_ChordCard" model="chord" />
-    }
 </div>
